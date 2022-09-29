@@ -47,11 +47,12 @@ Use the copy function below to do the following:
 
 
 function copy(newArray){
+  // Created and returned a copy of the original Array that I called newArray.
   return [...newArray]
 }
 
 console.log('task 1', copy(originalFlavors))
-
+// invoked the copy function and passed the originalFlavors argument through the copy function in paramaeter placeholder newArray.
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Confirm that an array is exactly 31 flavors. Your function should accept:
@@ -64,11 +65,16 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(thirtyOne){
+  // I used thirtyOne parameter as the originalFlavors and did the if conditional to check the length and return if said length was correct or not.
+  if(thirtyOne.length === 31){
+    return true
+  }else{
+    return false
+  }
  }
-
-
+console.log(is31Flavors(`task 2`, originalFlavors))
+// involking the is31Flavors function and passing originalFlavors argument in place of the thirtyOne parameter
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -81,11 +87,19 @@ Use the addFlavor function below to do the following:
 
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
+// I first created a copy of the firstArray parameter(originalFlavors) to a new Array.
+// I then used the unshift method to add the newFlav("Rainbow Sherbert") to the front of the array.
+// and returned the new array
+// last I consoled out the function, calling the two parameters originalFlavors, and the new flavor (Rainbow Sherbert)
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
- }
+
+function addFlavor(firstArray, newFlav){
+  firstArray.unshift(newFlav)
+  return firstArray
+}
+console.log(addFlavor(originalFlavors, 'Rainbow Sherbert'))
+
 
 
 
@@ -101,10 +115,11 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(fixedArray){
+ fixedArray.pop()
+ return fixedArray
 }
-
+console.log('Task 4', removeLastFlavor(originalFlavors))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -119,10 +134,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(addedFlav, inTheMid){
+   return addedFlav[inTheMid];
+  
 }
-
+console.log(`Task 5`, originalFlavors, 'Black Walnut ')
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -139,10 +155,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(originalArray, flavRemoved){
+  for(let i=0; i<originalArray.length; i++);{
+    if(originalArray[i].includes('Chocolate'));
+    return originalArray 
+  }  
 }
-
+console.log(`Task 6`, originalFlavors, 'Banana Nut Fudge')
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -164,10 +183,15 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(flavors, typesOfFlavors){
+  const filteredArray = ([flavors]);
+  for(let i=0; i<flavors.length; i++){
+    if(flavors[i].includes(typesOfFlavors))
+    return filteredArray
+  }
+  
 }
-
+console.log(`Task 7`, originalFlavors, 'Chocolate')
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
